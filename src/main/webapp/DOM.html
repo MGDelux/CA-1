@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>DOM manipulation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+        let boys = new Array("Peter", "lars", "Ole");
+        let girls = new Array("Janne", "hanne", "Sanne");
+        
+        function AddBoy() {
+            
+            boys.push("text_boy")
+        }
+        
+        function AddGirl() {
+            
+            girls.push("text_girl")
+        }
+        </script>
+        <div>
+            <input type="text" id="text_boy">
+            <button onclick="AddBoy">Add Boy</button>
+            <input type="text" id="text_girl">
+            <button onclick="AddGirl">Add Girl</button>
+        </div>
+        <script>
+            
+        </script>
+        <div>
+            <p></p>
+            <button onclick="Remove_Boy">Remove Boy</button>
+            <button onclick="Remove_Girl">Remove Girl</button> 
+            <input type="radio" name="Remove_first" id="Remove_first">
+            <label for="Remove_first">Remove first</label>
+            <input type="radio" name="Remove_last" id="Remove_last">
+            <label for="Remove_last">Remove last</label>
+            <button onclick="Revers_all">Reverse all</button>
+            <button onclick="SortAll">Sort all</button>
+        </div>
+        <div id="box">
+            <div id="Boys_row">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Boys</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>${boys}</td>
+                </tbody>    
+            </table>
+            </div>
+        
+            <div id="girls_row">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Girls</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>${girls}</td>
+                </tbody>    
+            </table>
+            </div>
+            <div id="all_row">
+            <table>
+                <thead>
+                    <tr>
+                        <th>All</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>${all}</td>
+                </tbody>    
+            </table>
+            </div>
+        </div>
+    </body>
+</html>
