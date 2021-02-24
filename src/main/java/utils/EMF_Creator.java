@@ -23,11 +23,11 @@ public class EMF_Creator {
     }
 
     public static EntityManagerFactory createEntityManagerFactory() {
-        return createEntityManagerFactory(false);
+        return createEntityManagerFactory(true);
     }
 
     public static EntityManagerFactory createEntityManagerFactoryForTest() {
-        return createEntityManagerFactory(true);
+        return createEntityManagerFactory(false);
     }
 
     private static EntityManagerFactory createEntityManagerFactory(boolean isTest) {
