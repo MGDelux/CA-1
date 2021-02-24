@@ -11,78 +11,45 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <script>
-        let boys = new Array("Peter", "lars", "Ole");
-        let girls = new Array("Janne", "hanne", "Sanne");
-        
-        function AddBoy() {
-            
-            boys.push("text_boy")
-        }
-        
-        function AddGirl() {
-            
-            girls.push("text_girl")
-        }
-        </script>
         <div>
+            <form>
             <input type="text" id="text_boy">
-            <button onclick="AddBoy">Add Boy</button>
+            <input type="button" onclick="AddBoy()" value="Addboy">
+           
             <input type="text" id="text_girl">
-            <button onclick="AddGirl">Add Girl</button>
+            <input type="button" onclick="AddGirl()" value="Addgirl">
+            </form>
         </div>
         <script>
             
         </script>
         <div>
             <p></p>
-            <button onclick="Remove_Boy">Remove Boy</button>
-            <button onclick="Remove_Girl">Remove Girl</button> 
-            <input type="radio" name="Remove_first" id="Remove_first">
+            <button onclick="RemoveBoy()">Remove Boy</button>
+            <button onclick="RemoveGirl()">Remove Girl</button> 
+            <form id="form">
+            <input type="radio" name="box" id="Remove_first" value="Remove_first">
             <label for="Remove_first">Remove first</label>
-            <input type="radio" name="Remove_last" id="Remove_last">
+            <input type="radio" name="box" id="Remove_last" value="Remove_last">
             <label for="Remove_last">Remove last</label>
+            </form>
             <button onclick="Revers_all">Reverse all</button>
             <button onclick="SortAll">Sort all</button>
         </div>
-        <div id="box">
+        <div id="box" style="float: left">
             <div id="Boys_row">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Boys</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <td>${boys}</td>
-                </tbody>    
-            </table>
+                <h2>Boys</h2>
+            
             </div>
-        
-            <div id="girls_row">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Girls</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <td>${girls}</td>
-                </tbody>    
-            </table>
+                <h2>Girls</h2>
+            <div id="Girls_row">
+            
             </div>
+                
             <div id="all_row">
-            <table>
-                <thead>
-                    <tr>
-                        <th>All</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <td>${all}</td>
-                </tbody>    
-            </table>
+                  <h2>Girls</h2>
             </div>
         </div>
+        <script src="javascript.js"></script>
     </body>
 </html>
