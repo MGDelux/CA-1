@@ -1,7 +1,7 @@
 package facades;
 
-import dtos.RenameMeDTO;
-import entities.RenameMe;
+import dtos.SolidCodeDTO;
+import entities.SolidCode;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -12,13 +12,13 @@ import utils.EMF_Creator;
  *
  * Rename Class to a relevant name Add add relevant facade methods
  */
-public class FacadeExample {
+public class GroupFacade {
 
-    private static FacadeExample instance;
+    private static GroupFacade instance;
     private static EntityManagerFactory emf;
     
     //Private Constructor to ensure Singleton
-    private FacadeExample() {}
+    private GroupFacade() {}
     
     
     /**
@@ -26,10 +26,10 @@ public class FacadeExample {
      * @param _emf
      * @return an instance of this facade class.
      */
-    public static FacadeExample getFacadeExample(EntityManagerFactory _emf) {
+    public static GroupFacade getFacade(EntityManagerFactory _emf) {
         if (instance == null) {
             emf = _emf;
-            instance = new FacadeExample();
+            instance = new GroupFacade();
         }
         return instance;
     }
@@ -38,8 +38,8 @@ public class FacadeExample {
         return emf.createEntityManager();
     }
     
-    public RenameMeDTO create(RenameMeDTO rm){
-        RenameMe rme = new RenameMe(rm.getDummyStr1(), rm.getDummyStr2());
+    public SolidCodeDTO create(SolidCodeDTO rm){
+        SolidCode rme = new SolidCode(rm.getStudentName(), rm.getStudentId(), rm.getFavouriteTvSerires());
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
@@ -48,18 +48,18 @@ public class FacadeExample {
         } finally {
             em.close();
         }
-        return new RenameMeDTO(rme);
+        return new SolidCodeDTO(rme);
     }
-    public RenameMeDTO getById(long id){
+    public SolidCodeDTO getById(long id){
         EntityManager em = emf.createEntityManager();
-        return new RenameMeDTO(em.find(RenameMe.class, id));
+        return new SolidCodeDTO(em.find(SolidCode.class, id));
     }
     
     //TODO Remove/Change this before use
-    public long getRenameMeCount(){
+    public long getCount(){
         EntityManager em = emf.createEntityManager();
         try{
-            long renameMeCount = (long)em.createQuery("SELECT COUNT(r) FROM RenameMe r").getSingleResult();
+            long renameMeCount = (long)em.createQuery("SELECT COUNT(r) FROM SolidCode r").getSingleResult();
             return renameMeCount;
         }finally{  
             em.close();
@@ -67,16 +67,16 @@ public class FacadeExample {
         
     }
     
-    public List<RenameMeDTO> getAll(){
+    public List<SolidCodeDTO> getAll(){
         EntityManager em = emf.createEntityManager();
-        TypedQuery<RenameMe> query = em.createQuery("SELECT r FROM RenameMe r", RenameMe.class);
-        List<RenameMe> rms = query.getResultList();
-        return RenameMeDTO.getDtos(rms);
+        TypedQuery<SolidCode> query = em.createQuery("SELECT r FROM SolidCode r", SolidCode.class);
+        List<SolidCode> rms = query.getResultList();
+        return SolidCodeDTO.getDtos(rms);
     }
     
     public static void main(String[] args) {
         emf = EMF_Creator.createEntityManagerFactory();
-        FacadeExample fe = getFacadeExample(emf);
+        GroupFacade fe = getFacade(emf);
         fe.getAll().forEach(dto->System.out.println(dto));
     }
 

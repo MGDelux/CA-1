@@ -5,8 +5,8 @@
  */
 package facades;
 
-import dtos.RenameMeDTO;
-import entities.RenameMe;
+import dtos.SolidCodeDTO;
+import entities.SolidCode;
 import javax.persistence.EntityManagerFactory;
 import utils.EMF_Creator;
 
@@ -17,10 +17,10 @@ import utils.EMF_Creator;
 public class Populator {
     public static void populate(){
         EntityManagerFactory emf = EMF_Creator.createEntityManagerFactory();
-        FacadeExample fe = FacadeExample.getFacadeExample(emf);
-        fe.create(new RenameMeDTO(new RenameMe("First 1", "Last 1")));
-        fe.create(new RenameMeDTO(new RenameMe("First 2", "Last 2")));
-        fe.create(new RenameMeDTO(new RenameMe("First 3", "Last 3")));
+        GroupFacade fe = GroupFacade.getFacade(emf);
+        fe.create(new SolidCodeDTO("Mathias", "cph-mt326","GOT"));
+        fe.create(new SolidCodeDTO( "Emil", "Last 2","TBD"));
+        fe.create(new SolidCodeDTO( "Søren", "Last 3","TBD"));
         
     }
     
