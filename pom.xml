@@ -21,7 +21,26 @@
     </properties>
     
     <dependencies>
-        
+ <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-common -->
+<dependency>
+    <groupId>org.glassfish.jersey.core</groupId>
+    <artifactId>jersey-common</artifactId>
+    <version>3.0.1</version>
+</dependency>
+
+    
+  <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-server -->
+<dependency>
+    <groupId>org.glassfish.jersey.core</groupId>
+    <artifactId>jersey-server</artifactId>
+    <version>3.0.1</version>
+</dependency>
+
+<dependency>
+    <groupId>org.glassfish.jersey</groupId>
+    <artifactId>jax-rs-ri</artifactId>
+    <version>2.0-rc1</version>
+</dependency>
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>org.eclipse.persistence.jpa</artifactId>
@@ -34,12 +53,7 @@
             <version>8.0.17</version>
         </dependency>
       
-        <dependency>
-            <groupId>org.glassfish.jersey.bundles</groupId>
-            <artifactId>jaxrs-ri</artifactId>
-            <version>2.32</version>
-        </dependency>
-        
+  
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
@@ -79,12 +93,7 @@
         </dependency>
         
         <!-- Grizly Server used to test REST endpoints -->
-        <dependency>
-            <groupId>org.glassfish.jersey.containers</groupId>
-            <artifactId>jersey-container-grizzly2-http</artifactId>
-            <version>2.32</version>
-            <scope>test</scope>
-        </dependency>
+  
         
         <dependency>
             <groupId>io.rest-assured</groupId>
