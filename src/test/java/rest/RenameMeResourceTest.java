@@ -52,9 +52,9 @@ public class RenameMeResourceTest {
     @BeforeEach
     public void setUp() {
         EntityManager em = emf.createEntityManager();
-         r1 = new SolidCode("Mathias", "cph-mt326","GOT" );
-         r2 = new SolidCode("Emil", "Last 2","TBD" );
-         r3 = new SolidCode("Søren", "Last 3","TBD");
+         r1 = new SolidCode("Mathias", "cph-mt326","Game Of Thrones" );
+         r2 = new SolidCode("Emil", "cph-ew45","Prison Break" );
+         r3 = new SolidCode("Søren", "cph-sa343","brooklyn Nine-Nine");
         try {
             em.getTransaction().begin();
             em.createNamedQuery("SolidCode.deleteAllRows").executeUpdate();
