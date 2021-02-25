@@ -1,6 +1,7 @@
    
         let boys = new Array("Peter", "lars", "Ole");
         let girls = new Array("Janne", "hanne", "Sanne");
+        let all = boys.concat(girls);
         
         
     function AddBoy() {
@@ -52,8 +53,6 @@
      boys.shift();
     }if(document.getElementById("Remove_last").checked){
       boys.pop();
-    }else{
-      console.log("Vælg en af radiobox mulighederne");  
     }
     clearBoxBoys("Boys_row");
      for(i = 0; i < boys.length; i++ ){
@@ -68,13 +67,46 @@
      girls.shift();
     }if(document.getElementById("Remove_last").checked){
       girls.pop();
-    }else{
-      console.log("Vælg en af radiobox mulighederne");  
     }
     clearBoxGirls("Girls_row");
      for(i = 0; i < girls.length; i++ ){
             console.log(girls[i]);
             let HTML = "<li>" + girls[i] + "</li>";             
             document.getElementById("Girls_row").innerHTML += "<ul>" + HTML + "</ul>";
+        };
+    }
+    
+    function ReverseAll(){
+    boys.splice(0,boys.length);
+    girls.splice(0,girls.length);
+    
+    }
+    
+    function SortAll(){
+        let all = boys.concat(girls).sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+       
+    clearBoxAll("All_row");
+     for(i = 0; i < all.length; i++ ){
+            console.log(all[i]);
+            let HTML = "<li>" + all[i] + "</li>";             
+            document.getElementById("All_row").innerHTML += "<ul>" + HTML + "</ul>";
+        };
+    }
+    
+    function onLoad(){
+        for(i = 0; i < boys.length; i++ ){
+            console.log(boys[i]);
+            let HTML = "<li>" + boys[i] + "</li>";             
+            document.getElementById("Boys_row").innerHTML += "<ul>" + HTML + "</ul>";
+        };
+         for(i = 0; i < girls.length; i++ ){
+            console.log(girls[i]);
+            let HTML = "<li>" + girls[i] + "</li>";             
+            document.getElementById("Girls_row").innerHTML += "<ul>" + HTML + "</ul>";
+        };
+        for(i = 0; i < all.length; i++ ){
+            console.log(all[i]);
+            let HTML = "<li>" + all[i] + "</li>";             
+            document.getElementById("All_row").innerHTML += "<ul>" + HTML + "</ul>";
         };
     }

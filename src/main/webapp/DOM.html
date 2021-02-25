@@ -9,15 +9,16 @@ and open the template in the editor.
         <title>DOM manipulation</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS.css">
     </head>
     <body>
         <div>
             <form>
             <input type="text" id="text_boy">
-            <input type="button" onclick="AddBoy()" value="Addboy">
+            <input type="button" onclick="AddBoy()" value="Add boy">
            
             <input type="text" id="text_girl">
-            <input type="button" onclick="AddGirl()" value="Addgirl">
+            <input type="button" onclick="AddGirl()" value="Add girl">
             </form>
         </div>
         <script>
@@ -33,23 +34,25 @@ and open the template in the editor.
             <input type="radio" name="box" id="Remove_last" value="Remove_last">
             <label for="Remove_last">Remove last</label>
             </form>
-            <button onclick="Revers_all">Reverse all</button>
-            <button onclick="SortAll">Sort all</button>
+            <button onclick="ReverseAll()">Reverse all</button>
+            <button onclick="SortAll()">Sort all</button>
         </div>
-        <div id="box" style="float: left">
+        <div id="box">
+            <h2>Boys</h2>
             <div id="Boys_row">
-                <h2>Boys</h2>
+                
             
             </div>
                 <h2>Girls</h2>
             <div id="Girls_row">
             
             </div>
-                
-            <div id="all_row">
-                  <h2>Girls</h2>
+                <h2>All</h2>
+            <div id="All_row">
+                  
             </div>
         </div>
         <script src="javascript.js"></script>
+        
     </body>
 </html>
